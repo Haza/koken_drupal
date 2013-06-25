@@ -1,0 +1,19 @@
+name = Koken
+description = Koken API integration.
+core = 7.x
+package = Other
+dependencies[] = views
+
+; Koken php lib
+files[] = lib/Koken.php
+
+; Views includes
+files[] = includes/views/koken.views.inc
+
+; Views plugins
+files[] = includes/views/koken_query_plugin.inc
+
+; Views handlers
+files[] = includes/views/handlers/koken_handler_album_generic_field.inc
+files[] = includes/views/handlers/koken_handler_album_cover_field.inc
+files[] = includes/views/handlers/koken_handler_content_image_field.inc

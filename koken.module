@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implementation of hook_views_api().
+ */
+function koken_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'koken') . '/includes/views',
+  );
+}
+
+/**
+ * Implements hook_permission().
+ */
+function koken_permission() {
+  $permissions = array(
+    'administer koken' => array(
+      'title' => t('Administer Koken'),
+    ),
+    'access koken' => array(
+      'title' => t('Access Koken'),
+    ),
+  );
+
+  return $permissions;
+}
+
+function koken_initialize_library() {
+  $url = 'http://koken.haza.fr';
+  return new Koken($url);
+}
