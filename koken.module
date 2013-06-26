@@ -26,7 +26,9 @@ function koken_permission() {
   return $permissions;
 }
 
-function koken_initialize_library() {
-  $url = 'http://koken.haza.fr';
+function koken_initialize_library($url) {
+  if (empty($url)) {
+    return FALSE;
+  }
   return new Koken($url);
 }

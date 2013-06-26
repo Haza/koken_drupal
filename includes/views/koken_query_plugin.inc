@@ -14,8 +14,6 @@ class koken_query_plugin extends views_plugin_query {
     try {
       parent::init($base_table, $base_field, $options);
       $this->fields = array();
-      $this->koken = koken_initialize_library();
-
     }
     catch (Exception $e) {
       $this->errors[] = $e->getMessage();
@@ -23,7 +21,10 @@ class koken_query_plugin extends views_plugin_query {
   }
   function execute(&$view) {
     $args = $view->args;
-    $koken = koken_initialize_library();
+    if (empty($this->options['koken_url'])) {
+      return drupal_set_message('The koken need to be set in the "query settings".');
+    }
+    $koken = koken_initialize_library($this->options['koken_url']);
     $data = $koken->call($this->options['path']);
     if ($data) {
       $view->result = $data->albums;
@@ -34,10 +35,15 @@ class koken_query_plugin extends views_plugin_query {
    */
   function options_form(&$form, &$form_state) {
     parent::options_form($form, $form_state);
+      $form['koken_url'] = array(
+        '#type' => 'textfield',
+        '#description' => t('The koken url.'),
+        '#default_value' => !empty($this->options['koken_url']) ? $this->options['koken_url'] : FALSE,
+      );
       $form['path'] = array(
         '#type' => 'textfield',
-        '#description' => t('This is the patch you want to query.'),
-        '#default_value' => $this->options['path'],
+        '#description' => t('The arguments to query about (like "/ablums" for albums, or "/albums/1/content" for the content of the album 1, ...'),
+        '#default_value' => !empty($this->options['path']) ? $this->options['path'] : FALSE,
         '#required' => TRUE,
       );
   }
@@ -61,10 +67,15 @@ class koken_query_plugin_albums extends koken_query_plugin {
    */
   function execute(&$view) {
     $args = $view->args;
-    $koken = koken_initialize_library();
-    $data = $koken->call($this->options['path']);
-    if ($data) {
-      $view->result = $data->albums;
+    if (empty($this->options['koken_url'])) {
+      drupal_set_message('The koken need to be set in the "query settings".', 'error');
+    }
+    else {
+      $koken = koken_initialize_library($this->options['koken_url']);
+      $data = $koken->call($this->options['path']);
+      if ($data) {
+        $view->result = $data->albums;
+      }
     }
   }
 }
@@ -75,10 +86,15 @@ class koken_query_plugin_content extends koken_query_plugin {
    */
   function execute(&$view) {
     $args = $view->args;
-    $koken = koken_initialize_library();
-    $data = $koken->call($this->options['path']);
-    if ($data) {
-      $view->result = $data->content;
+    if (empty($this->options['koken_url'])) {
+      drupal_set_message('The koken need to be set in the "query settings".', 'error');
+    }
+    else {
+      $koken = koken_initialize_library($this->options['koken_url']);
+      $data = $koken->call($this->options['path']);
+      if ($data) {
+        $view->result = $data->content;
+      }
     }
   }
 }
