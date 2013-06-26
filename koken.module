@@ -11,21 +11,12 @@ function koken_views_api() {
 }
 
 /**
- * Implements hook_permission().
+ * Initialize a new Koken object.
+ *
+ * @param $url
+ *   the url of a Koken install.
+ * @return bool|Koken
  */
-function koken_permission() {
-  $permissions = array(
-    'administer koken' => array(
-      'title' => t('Administer Koken'),
-    ),
-    'access koken' => array(
-      'title' => t('Access Koken'),
-    ),
-  );
-
-  return $permissions;
-}
-
 function koken_initialize_library($url) {
   if (empty($url)) {
     return FALSE;
