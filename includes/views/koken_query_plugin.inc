@@ -8,29 +8,6 @@
 class koken_query_plugin extends views_plugin_query {
 
   /**
-   * Create the basic query object and fill with default values.
-   */
-  public function init($base_table, $base_field, $options) {
-    try {
-      parent::init($base_table, $base_field, $options);
-      $this->fields = array();
-    }
-    catch (Exception $e) {
-      $this->errors[] = $e->getMessage();
-    }
-  }
-  function execute(&$view) {
-    $args = $view->args;
-    if (empty($this->options['koken_url'])) {
-      return drupal_set_message('The koken need to be set in the "query settings".');
-    }
-    $koken = koken_initialize_library($this->options['koken_url']);
-    $data = $koken->call($this->options['path']);
-    if ($data) {
-      $view->result = $data->albums;
-    }
-  }
-  /**
    * Add settings for the ui.
    */
   function options_form(&$form, &$form_state) {
