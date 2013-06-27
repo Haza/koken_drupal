@@ -86,12 +86,44 @@ function koken_views_data() {
     'help' => t('Use koken REST API..'),
     'query class' => 'koken_query_plugin_content',
   );
-  // Define a name field.
+  // Define a image field.
   $data['koken_content']['image'] = array(
     'title' => t('Image'),
     'help' => t('Get the content picture.'),
     'field' => array(
       'handler' => 'koken_handler_content_image_field',
+    ),
+  );
+  // Define the exif field.
+  $data['koken_content']['exif'] = array(
+    'title' => t('Exif informations'),
+    'help' => t('Get the exif informations.'),
+    'field' => array(
+      'handler' => 'koken_handler_content_exif_field',
+    ),
+  );
+  // Define the title field.
+  $data['koken_content']['title'] = array(
+    'title' => t('Title'),
+    'help' => t('Get the title.'),
+    'field' => array(
+      'handler' => 'koken_handler_album_generic_field',
+    ),
+  );
+  // Define the caption field.
+  $data['koken_content']['caption'] = array(
+    'title' => t('Caption'),
+    'help' => t('Get the caption..'),
+    'field' => array(
+      'handler' => 'koken_handler_album_generic_field',
+    ),
+  );
+  // Define the tags field.
+  $data['koken_content']['tags'] = array(
+    'title' => t('Tags'),
+    'help' => t('Get the tags.'),
+    'field' => array(
+      'handler' => 'koken_handler_content_tags_field',
     ),
   );
   return $data;
