@@ -71,7 +71,6 @@ class koken_query_plugin_content extends koken_query_plugin {
       $data = $koken->call($this->options['path']);
       if ($data) {
         $view->result = $data->content;
-        dsm($view->result);
       }
     }
   }

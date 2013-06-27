@@ -52,7 +52,7 @@ function koken_views_data() {
     'title' => t('Album Name'),
     'help' => t('Get the album name.'),
     'field' => array(
-      'handler' => 'koken_handler_album_generic_field',
+      'handler' => 'koken_handler_generic_field',
     ),
   );
   // Define a name field.
@@ -60,7 +60,7 @@ function koken_views_data() {
     'title' => t('Album Summary'),
     'help' => t('Display the album summary.'),
     'field' => array(
-      'handler' => 'koken_handler_album_generic_field',
+      'handler' => 'koken_handler_generic_field',
     ),
   );
   // Define a name field.
@@ -68,7 +68,7 @@ function koken_views_data() {
     'title' => t('Album description'),
     'help' => t('Display the album description.'),
     'field' => array(
-      'handler' => 'koken_handler_album_generic_field',
+      'handler' => 'koken_handler_generic_field',
     ),
   );
   // Define an image field.
@@ -107,7 +107,7 @@ function koken_views_data() {
     'title' => t('Title'),
     'help' => t('Get the title.'),
     'field' => array(
-      'handler' => 'koken_handler_album_generic_field',
+      'handler' => 'koken_handler_generic_field',
     ),
   );
   // Define the caption field.
@@ -115,7 +115,7 @@ function koken_views_data() {
     'title' => t('Caption'),
     'help' => t('Get the caption..'),
     'field' => array(
-      'handler' => 'koken_handler_album_generic_field',
+      'handler' => 'koken_handler_generic_field',
     ),
   );
   // Define the tags field.

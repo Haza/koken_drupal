@@ -14,7 +14,7 @@ files[] = includes/views/koken.views.inc
 files[] = includes/views/koken_query_plugin.inc
 
 ; Views handlers
-files[] = includes/views/handlers/koken_handler_album_generic_field.inc
+files[] = includes/views/handlers/koken_handler_generic_field.inc
 files[] = includes/views/handlers/koken_handler_album_cover_field.inc
 files[] = includes/views/handlers/koken_handler_content_image_field.inc
 files[] = includes/views/handlers/koken_handler_content_exif_field.inc
