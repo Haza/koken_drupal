@@ -1,0 +1,16 @@
+name: Koken
+description: 'Koken API integration.'
+type: module
+core: 8.x
+package: Other
+dependencies:
+  - views
+files:
+  - lib/Koken.php
+  - includes/views/koken.views.inc
+  - includes/views/koken_query_plugin.inc
+  - includes/views/handlers/koken_handler_generic_field.inc
+  - includes/views/handlers/koken_handler_album_cover_field.inc
+  - includes/views/handlers/koken_handler_content_image_field.inc
+  - includes/views/handlers/koken_handler_content_exif_field.inc
+  - includes/views/handlers/koken_handler_content_tags_field.inc
