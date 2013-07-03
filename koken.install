@@ -31,8 +31,8 @@ function koken_requirements($phase) {
   }
 
   $requirements['koken_php_extensions'] = array(
-      'title' => $t('Koken PHP Extensions'),
-      'value' => ($phase == 'install') ? '' : $value,
+    'title' => $t('Koken PHP Extensions'),
+    'value' => ($phase == 'install') ? '' : $value,
   );
 
   if ($disabled_extensions) {
