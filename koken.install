@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_requirements().
+ */
+function koken_requirements($phase) {
+  $requirements = array();
+  // Ensure translations don't break at install time.
+  $t = get_t();
+
+  // Test Required PHP Extensions.
+  $requiredExtensions = array(
+    'curl'
+  );
+  $disabled_extensions = array();
+
+  $value = '';
+  foreach ($requiredExtensions as $ext) {
+    $ext_enabled = extension_loaded($ext) ? 'Enabled' : 'Disabled';
+
+    $value .= $ext . ': ' . $ext_enabled . ' ';
+
+    if ($ext_enabled == 'Disabled') {
+      $disabled_extensions[] = $ext;
+    }
+  }
+
+  $requirements['koken_php_extensions'] = array(
+      'title' => $t('Koken PHP Extensions'),
+      'value' => ($phase == 'install') ? '' : $value
+  );
+
+  if ($disabled_extensions) {
+    $requirements['koken_php_extensions']['severity'] = REQUIREMENT_ERROR;
+    $requirements['koken_php_extensions']['description'] = $t('The following PHP extensions must be enabled for the koken bridge: ' . implode(', ', $disabled_extensions));
+  }
+
+  return $requirements;
+}

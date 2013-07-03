@@ -79,6 +79,30 @@ function koken_views_data() {
       'handler' => 'koken_handler_album_cover_field',
     ),
   );
+  // Define an summary field.
+  $data['koken_albums']['summary'] = array(
+    'title' => t('Album summary'),
+    'help' => t('Get the summary.'),
+    'field' => array(
+      'handler' => 'koken_handler_generic_field',
+    ),
+  );
+  // Define an description field.
+  $data['koken_albums']['description'] = array(
+    'title' => t('Album description'),
+    'help' => t('Get the description.'),
+    'field' => array(
+      'handler' => 'koken_handler_generic_field',
+    ),
+  );
+  // Define a tag field.
+  $data['koken_albums']['tags'] = array(
+    'title' => t('Album tags'),
+    'help' => t('Get the tags.'),
+    'field' => array(
+      'handler' => 'koken_handler_tags_field',
+    ),
+  );
 
   $data['koken_content']['table']['group']  = t('Koken Content');
   $data['koken_content']['table']['base'] = array(
@@ -123,7 +147,7 @@ function koken_views_data() {
     'title' => t('Tags'),
     'help' => t('Get the tags.'),
     'field' => array(
-      'handler' => 'koken_handler_content_tags_field',
+      'handler' => 'koken_handler_tags_field',
     ),
   );
   return $data;

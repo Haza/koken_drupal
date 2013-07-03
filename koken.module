@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Allow to requests a koken install using views.
+ */
+
+/**
  * Implementation of hook_views_api().
  */
 function koken_views_api() {

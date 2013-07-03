@@ -8,7 +8,7 @@
 /**
  * Field handler to display a basic text field.
  */
-class koken_handler_content_tags_field extends views_handler_field_custom {
+class koken_handler_tags_field extends views_handler_field_custom {
 
   // Used to keep field_alias synched with field name.
   function query() {
