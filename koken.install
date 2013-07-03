@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install, update and uninstall functions for the koken module.
+ */
+
+/**
  * Implements hook_requirements().
  */
 function koken_requirements($phase) {
@@ -9,13 +14,13 @@ function koken_requirements($phase) {
   $t = get_t();
 
   // Test Required PHP Extensions.
-  $requiredExtensions = array(
-    'curl'
+  $required_extensions = array(
+    'curl',
   );
   $disabled_extensions = array();
 
   $value = '';
-  foreach ($requiredExtensions as $ext) {
+  foreach ($required_extensions as $ext) {
     $ext_enabled = extension_loaded($ext) ? 'Enabled' : 'Disabled';
 
     $value .= $ext . ': ' . $ext_enabled . ' ';
@@ -27,7 +32,7 @@ function koken_requirements($phase) {
 
   $requirements['koken_php_extensions'] = array(
       'title' => $t('Koken PHP Extensions'),
-      'value' => ($phase == 'install') ? '' : $value
+      'value' => ($phase == 'install') ? '' : $value,
   );
 
   if ($disabled_extensions) {

@@ -10,7 +10,9 @@
  */
 class koken_handler_content_exif_field extends views_handler_field_custom {
 
-  // Used to keep field_alias synched with field name.
+  /**
+   * Keep field_alias synched with field name.
+   */
   function query() {
     $this->ensure_my_table();
     $this->add_additional_fields();

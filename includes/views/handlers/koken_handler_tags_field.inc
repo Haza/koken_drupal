@@ -10,7 +10,9 @@
  */
 class koken_handler_tags_field extends views_handler_field_custom {
 
-  // Used to keep field_alias synched with field name.
+  /**
+   * Keep field_alias synched with field name.
+   */
   function query() {
     $this->ensure_my_table();
     $this->add_additional_fields();
@@ -35,6 +37,6 @@ class koken_handler_tags_field extends views_handler_field_custom {
    *   Renders the return reason.
    */
   public function render($values) {
-    return theme('item_list', array('items' =>$values->tags));
+    return theme('item_list', array('items' => $values->tags));
   }
 }

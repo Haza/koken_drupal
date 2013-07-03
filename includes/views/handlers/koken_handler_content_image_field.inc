@@ -10,7 +10,9 @@
  */
 class koken_handler_content_image_field extends views_handler_field_custom {
 
-  // Used to keep field_alias synched with field name.
+  /**
+   * Keep field_alias synched with field name.
+   */
   function query() {
     $this->ensure_my_table();
     $this->add_additional_fields();
@@ -39,13 +41,13 @@ class koken_handler_content_image_field extends views_handler_field_custom {
       '#title' => t('Koken cover size'),
       '#description' => t('Select the size to be displayed.'),
       '#options' => array(
-         'tiny' => t('Tiny'),
-         'small' => t('Small'),
-         'medium' => t('Medium'),
-         'medium_large' => t('Medium large'),
-         'large' => t('Large'),
-         'xlarge' => t('Extra Large'),
-         'huge' => t('Huge'),
+        'tiny' => t('Tiny'),
+        'small' => t('Small'),
+        'medium' => t('Medium'),
+        'medium_large' => t('Medium large'),
+        'large' => t('Large'),
+        'xlarge' => t('Extra Large'),
+        'huge' => t('Huge'),
       ),
       '#default_value' => $this->options['koken_cover_size'],
       '#multiple' => FALSE,

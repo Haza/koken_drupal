@@ -1,5 +1,9 @@
 <?php
-/* This file will include all the Views hook implementations. */
+
+/**
+ * @file
+ * This file include all the Views hook implementations.
+ */
 
 /**
  * Implements hook_views_plugin().
@@ -33,13 +37,14 @@ function koken_views_plugins() {
 /**
  * Implements hook_views_data().
  *
- * Making the option appear as a view type requires implementing hook_views_data().
+ * Making the option appear as a view type requires implementing
+ * hook_views_data().
  *
  * With the field, we are defining how this item must be handled, but we have to
  * declare first the type of handler we are talking about. We may have different
  * handlers for each field, and we may use views default handlers or our custom
  * ones.
-*/
+ */
 function koken_views_data() {
   $data['koken_albums']['table']['group']  = t('Koken Album');
   $data['koken_albums']['table']['base'] = array(

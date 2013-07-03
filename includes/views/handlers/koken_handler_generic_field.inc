@@ -10,7 +10,9 @@
  */
 class koken_handler_generic_field extends views_handler_field {
 
-  // Used to keep field_alias synched with field name.
+  /**
+   * Keep field_alias synched with field name.
+   */
   function query() {
     $this->field_alias = $this->real_field;
   }

@@ -6,7 +6,7 @@
  */
 
 /**
- * Implementation of hook_views_api().
+ * Implements hook_views_api().
  */
 function koken_views_api() {
   return array(
@@ -18,9 +18,11 @@ function koken_views_api() {
 /**
  * Initialize a new Koken object.
  *
- * @param $url
+ * @param string $url
  *   the url of a Koken install.
+ *
  * @return bool|Koken
+ *   A Koken object, used to query against the rest API with curl.
  */
 function koken_initialize_library($url) {
   if (empty($url)) {
