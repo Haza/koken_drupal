@@ -52,7 +52,6 @@ function koken_views_data() {
     'help' => t('Use koken REST API..'),
     'query class' => 'koken_query_plugin_albums',
   );
-  // Define a name field.
   $data['koken_albums']['title'] = array(
     'title' => t('Album Name'),
     'help' => t('Get the album name.'),
@@ -60,7 +59,7 @@ function koken_views_data() {
       'handler' => 'koken_handler_generic_field',
     ),
   );
-  // Define a name field.
+  // Define a summary field.
   $data['koken_albums']['summary'] = array(
     'title' => t('Album Summary'),
     'help' => t('Display the album summary.'),
@@ -68,7 +67,7 @@ function koken_views_data() {
       'handler' => 'koken_handler_generic_field',
     ),
   );
-  // Define a name field.
+  // Define a description field.
   $data['koken_albums']['description'] = array(
     'title' => t('Album description'),
     'help' => t('Display the album description.'),
@@ -76,28 +75,12 @@ function koken_views_data() {
       'handler' => 'koken_handler_generic_field',
     ),
   );
-  // Define an image field.
+  // Define an cover field.
   $data['koken_albums']['cover'] = array(
     'title' => t('Album Cover'),
     'help' => t('Get the album cover.'),
     'field' => array(
       'handler' => 'koken_handler_album_cover_field',
-    ),
-  );
-  // Define an summary field.
-  $data['koken_albums']['summary'] = array(
-    'title' => t('Album summary'),
-    'help' => t('Get the summary.'),
-    'field' => array(
-      'handler' => 'koken_handler_generic_field',
-    ),
-  );
-  // Define an description field.
-  $data['koken_albums']['description'] = array(
-    'title' => t('Album description'),
-    'help' => t('Get the description.'),
-    'field' => array(
-      'handler' => 'koken_handler_generic_field',
     ),
   );
   // Define a tag field.
@@ -114,6 +97,34 @@ function koken_views_data() {
     'title' => t('koken API - Content'),
     'help' => t('Use koken REST API..'),
     'query class' => 'koken_query_plugin_content',
+  );
+    // Define an id field.
+  $data['koken_content']['id'] = array(
+    'title' => t('Content id'),
+    'help' => t('Get the content id.'),
+    'field' => array(
+      'handler' => 'koken_handler_generic_field',
+    ),
+    // Information for accepting a aid as an argument
+    'argument' => array(
+      'handler' => 'koken_handler_argument_cid',
+      'name field' => 'Content ID',
+      'numeric' => TRUE,
+    ),
+  );
+  // Define an id field.
+  $data['koken_content']['aid'] = array(
+    'title' => t('Content album id'),
+    'help' => t('Get the album id.'),
+    'field' => array(
+      'handler' => 'koken_handler_generic_field',
+    ),
+    // Information for accepting a aid as an argument
+    'argument' => array(
+      'handler' => 'koken_handler_argument_aid',
+      'name field' => 'Album ID',
+      'numeric' => TRUE,
+    ),
   );
   // Define a image field.
   $data['koken_content']['image'] = array(

@@ -16,3 +16,5 @@ files[] = includes/views/handlers/koken_handler_album_cover_field.inc
 files[] = includes/views/handlers/koken_handler_content_image_field.inc
 files[] = includes/views/handlers/koken_handler_content_exif_field.inc
 files[] = includes/views/handlers/koken_handler_tags_field.inc
+files[] = includes/views/handlers/koken_handler_argument_cid.inc
+files[] = includes/views/handlers/koken_handler_argument_aid.inc

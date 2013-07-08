@@ -69,9 +69,16 @@ class koken_query_plugin_content extends koken_query_plugin {
     else {
       $koken = koken_initialize_library($this->options['koken_url']);
       $data = $koken->call($this->options['path']);
+      dsm($data);
       if ($data) {
-        $view->result = $data->content;
+        if (!empty($data->filename)) {
+          $view->result[] = $data;
+        }
+        else {
+          $view->result = $data->content;
+        }
       }
     }
+    dsm($view->result);
   }
 }
