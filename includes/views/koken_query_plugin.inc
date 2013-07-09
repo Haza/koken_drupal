@@ -21,7 +21,7 @@ class koken_query_plugin extends views_plugin_query {
         '#type' => 'textfield',
         '#description' => t('The arguments to query about (like "/ablums" for albums, or "/albums/1/content" for the content of the album 1, ...'),
         '#default_value' => !empty($this->options['path']) ? $this->options['path'] : FALSE,
-        '#required' => TRUE,
+        '#required' => FALSE,
       );
   }
 
@@ -69,7 +69,6 @@ class koken_query_plugin_content extends koken_query_plugin {
     else {
       $koken = koken_initialize_library($this->options['koken_url']);
       $data = $koken->call($this->options['path']);
-      dsm($data);
       if ($data) {
         if (!empty($data->filename)) {
           $view->result[] = $data;
@@ -79,6 +78,5 @@ class koken_query_plugin_content extends koken_query_plugin {
         }
       }
     }
-    dsm($view->result);
   }
 }

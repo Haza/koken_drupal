@@ -16,7 +16,6 @@ class koken_handler_argument_cid extends views_handler_argument_numeric {
   public function construct() {
     parent::construct();
     $this->additional_fields['data'] = 'data';
-    dsm($this);
   }
 
   /**
