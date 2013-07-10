@@ -12,17 +12,11 @@ class koken_query_plugin extends views_plugin_query {
    */
   function options_form(&$form, &$form_state) {
     parent::options_form($form, $form_state);
-      $form['koken_url'] = array(
-        '#type' => 'textfield',
-        '#description' => t('The koken url.'),
-        '#default_value' => !empty($this->options['koken_url']) ? $this->options['koken_url'] : FALSE,
-      );
-      $form['path'] = array(
-        '#type' => 'textfield',
-        '#description' => t('The arguments to query about (like "/ablums" for albums, or "/albums/1/content" for the content of the album 1, ...'),
-        '#default_value' => !empty($this->options['path']) ? $this->options['path'] : FALSE,
-        '#required' => FALSE,
-      );
+    $form['koken_url'] = array(
+      '#type' => 'textfield',
+      '#description' => t('The koken url.'),
+      '#default_value' => !empty($this->options['koken_url']) ? $this->options['koken_url'] : FALSE,
+    );
   }
 
   function add_field($table, $field, $alias = '', $params = array()) {
@@ -49,7 +43,7 @@ class koken_query_plugin_albums extends koken_query_plugin {
     }
     else {
       $koken = koken_initialize_library($this->options['koken_url']);
-      $data = $koken->call($this->options['path']);
+      $data = $koken->call('/albums');
       if ($data) {
         $view->result = $data->albums;
       }
