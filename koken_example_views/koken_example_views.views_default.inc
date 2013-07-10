@@ -22,7 +22,7 @@ function koken_example_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'test';
+  $handler->display->display_options['title'] = 'Koken example content';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -82,7 +82,7 @@ function koken_example_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'koken';
+  $handler->display->display_options['path'] = 'koken-example-content';
 
   $views[$view->name] = $view;
 

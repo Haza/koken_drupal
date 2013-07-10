@@ -32,7 +32,7 @@ class koken_query_plugin extends views_plugin_query {
   }
 }
 
-class koken_query_plugin_albums extends koken_query_plugin {
+abstract class koken_query_plugin_albums extends koken_query_plugin {
   /**
    * Execute the query.
    */
@@ -62,7 +62,8 @@ class koken_query_plugin_content extends koken_query_plugin {
     }
     else {
       $koken = koken_initialize_library($this->options['koken_url']);
-      $data = $koken->call($this->options['path']);
+      // 'koken_query_path' came from the content argument handler.
+      $data = $koken->call($this->options['koken_query_path']);
       if ($data) {
         if (!empty($data->filename)) {
           $view->result[] = $data;

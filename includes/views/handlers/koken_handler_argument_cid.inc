@@ -25,7 +25,6 @@ class koken_handler_argument_cid extends views_handler_argument_numeric {
    */
   function query($group_by = FALSE) {
     $this->ensure_my_table();
-    $a = $this->view->args;
-    $this->query->options['path'] = '/content/' . $this->argument;
+    $this->query->options['koken_query_path'] = '/content/' . $this->argument;
   }
 }
