@@ -112,7 +112,7 @@ function koken_views_data() {
       'numeric' => TRUE,
     ),
   );
-  // Define an id field.
+  // Define an album id field.
   $data['koken_content']['aid'] = array(
     'title' => t('Content album id'),
     'help' => t('Get the album id.'),

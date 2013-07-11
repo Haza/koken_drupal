@@ -10,81 +10,6 @@
  */
 function koken_example_views_views_default_views() {
   $views = array();
-  $view = new view();
-  $view->name = 'koken_example_content';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'koken_content';
-  $view->human_name = 'Koken example content';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Koken example content';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Koken Content: Content id */
-  $handler->display->display_options['fields']['id']['id'] = 'id';
-  $handler->display->display_options['fields']['id']['table'] = 'koken_content';
-  $handler->display->display_options['fields']['id']['field'] = 'id';
-  /* Field: Koken Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'koken_content';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  /* Field: Koken Content: Caption */
-  $handler->display->display_options['fields']['caption']['id'] = 'caption';
-  $handler->display->display_options['fields']['caption']['table'] = 'koken_content';
-  $handler->display->display_options['fields']['caption']['field'] = 'caption';
-  /* Field: Koken Content: Image */
-  $handler->display->display_options['fields']['image']['id'] = 'image';
-  $handler->display->display_options['fields']['image']['table'] = 'koken_content';
-  $handler->display->display_options['fields']['image']['field'] = 'image';
-  $handler->display->display_options['fields']['image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['image']['alter']['path'] = 'koken/1/[id]';
-  $handler->display->display_options['fields']['image']['koken_cover_size'] = 'medium';
-  /* Field: Koken Content: Exif informations */
-  $handler->display->display_options['fields']['exif']['id'] = 'exif';
-  $handler->display->display_options['fields']['exif']['table'] = 'koken_content';
-  $handler->display->display_options['fields']['exif']['field'] = 'exif';
-  $handler->display->display_options['fields']['exif']['alter']['alter_text'] = FALSE;
-  $handler->display->display_options['fields']['exif']['hide_alter_empty'] = TRUE;
-  /* Field: Koken Content: Tags */
-  $handler->display->display_options['fields']['tags']['id'] = 'tags';
-  $handler->display->display_options['fields']['tags']['table'] = 'koken_content';
-  $handler->display->display_options['fields']['tags']['field'] = 'tags';
-  /* Contextual filter: Koken Content: Content album id */
-  $handler->display->display_options['arguments']['aid']['id'] = 'aid';
-  $handler->display->display_options['arguments']['aid']['table'] = 'koken_content';
-  $handler->display->display_options['arguments']['aid']['field'] = 'aid';
-  $handler->display->display_options['arguments']['aid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['aid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['aid']['default_argument_skip_url'] = TRUE;
-  $handler->display->display_options['arguments']['aid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['aid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['aid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Koken Content: Content id */
-  $handler->display->display_options['arguments']['id']['id'] = 'id';
-  $handler->display->display_options['arguments']['id']['table'] = 'koken_content';
-  $handler->display->display_options['arguments']['id']['field'] = 'id';
-  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['id']['default_argument_skip_url'] = TRUE;
-  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'koken-example-content';
-
-  $views[$view->name] = $view;
 
   $view = new view();
   $view->name = 'koken_example_album';
@@ -94,12 +19,12 @@ function koken_example_views_views_default_views() {
   $view->human_name = 'Koken example album';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = false; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Koken example album';
-  $handler->display->display_options['use_more_always'] = false;
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -138,5 +63,142 @@ function koken_example_views_views_default_views() {
   $handler->display->display_options['path'] = 'koken-example-album';
 
   $views[$view->name] = $view;
+
+  $view = new view();
+  $view->name = 'koken_example_content';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'koken_content';
+  $view->human_name = 'Koken example content';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Koken example content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Koken Content: Content id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  /* Field: Koken Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'koken-example-single-content/[id]';
+  /* Field: Koken Content: Caption */
+  $handler->display->display_options['fields']['caption']['id'] = 'caption';
+  $handler->display->display_options['fields']['caption']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['caption']['field'] = 'caption';
+  /* Field: Koken Content: Image */
+  $handler->display->display_options['fields']['image']['id'] = 'image';
+  $handler->display->display_options['fields']['image']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['image']['field'] = 'image';
+  $handler->display->display_options['fields']['image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['image']['alter']['path'] = 'koken-example-single-content/[id]';
+  $handler->display->display_options['fields']['image']['koken_cover_size'] = 'medium';
+  /* Field: Koken Content: Exif informations */
+  $handler->display->display_options['fields']['exif']['id'] = 'exif';
+  $handler->display->display_options['fields']['exif']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['exif']['field'] = 'exif';
+  $handler->display->display_options['fields']['exif']['alter']['alter_text'] = FALSE;
+  $handler->display->display_options['fields']['exif']['hide_alter_empty'] = TRUE;
+  /* Field: Koken Content: Tags */
+  $handler->display->display_options['fields']['tags']['id'] = 'tags';
+  $handler->display->display_options['fields']['tags']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['tags']['field'] = 'tags';
+  /* Contextual filter: Koken Content: Content album id */
+  $handler->display->display_options['arguments']['aid']['id'] = 'aid';
+  $handler->display->display_options['arguments']['aid']['table'] = 'koken_content';
+  $handler->display->display_options['arguments']['aid']['field'] = 'aid';
+  $handler->display->display_options['arguments']['aid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['aid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['aid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['aid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['aid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['aid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'koken-example-content/%';
+
+  $views[$view->name] = $view;
+
+  $view = new view();
+  $view->name = 'koken_example_single_content';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'koken_content';
+  $view->human_name = 'Koken example single content';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Koken example content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Koken Content: Content id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  /* Field: Koken Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Koken Content: Caption */
+  $handler->display->display_options['fields']['caption']['id'] = 'caption';
+  $handler->display->display_options['fields']['caption']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['caption']['field'] = 'caption';
+  /* Field: Koken Content: Image */
+  $handler->display->display_options['fields']['image']['id'] = 'image';
+  $handler->display->display_options['fields']['image']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['image']['field'] = 'image';
+  $handler->display->display_options['fields']['image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['image']['alter']['path'] = 'koken/1/[id]';
+  $handler->display->display_options['fields']['image']['koken_cover_size'] = 'medium_large';
+  /* Field: Koken Content: Exif informations */
+  $handler->display->display_options['fields']['exif']['id'] = 'exif';
+  $handler->display->display_options['fields']['exif']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['exif']['field'] = 'exif';
+  $handler->display->display_options['fields']['exif']['alter']['alter_text'] = FALSE;
+  $handler->display->display_options['fields']['exif']['hide_alter_empty'] = TRUE;
+  /* Field: Koken Content: Tags */
+  $handler->display->display_options['fields']['tags']['id'] = 'tags';
+  $handler->display->display_options['fields']['tags']['table'] = 'koken_content';
+  $handler->display->display_options['fields']['tags']['field'] = 'tags';
+  /* Contextual filter: Koken Content: Content id */
+  $handler->display->display_options['arguments']['id']['id'] = 'id';
+  $handler->display->display_options['arguments']['id']['table'] = 'koken_content';
+  $handler->display->display_options['arguments']['id']['field'] = 'id';
+  $handler->display->display_options['arguments']['id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['id']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'koken-example-single-content/%';
+
+  $views[$view->name] = $view;
+
   return $views;
 }

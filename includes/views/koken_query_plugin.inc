@@ -5,7 +5,7 @@
  *
  * Our custom Query handler must be aware of some information about the current view.
  */
-class koken_query_plugin extends views_plugin_query {
+abstract class koken_query_plugin extends views_plugin_query {
 
   /**
    * Add settings for the ui.
@@ -32,7 +32,7 @@ class koken_query_plugin extends views_plugin_query {
   }
 }
 
-abstract class koken_query_plugin_albums extends koken_query_plugin {
+class koken_query_plugin_albums extends koken_query_plugin {
   /**
    * Execute the query.
    */

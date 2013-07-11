@@ -1,10 +1,31 @@
 <?php
 
 /**
+ * @file
+ * An example module that provides a few default views to demonstrate how you
+ * can use the koken module to list sets of data grabbed from Koken.
+ */
+
+/**
  * Implements hook_views_api().
  */
 function koken_example_views_views_api() {
   return array(
     'api' => 3,
   );
+}
+
+/**
+ * Implements hook_help().
+ */
+function koken_example_views_help($path, $arg) {
+  switch ($path) {
+    // Main module help for the block module
+    case 'koken-example-album/%':
+      return t('You are on an example page that list all the public albums grabbed from your Koken install.');
+    case 'koken-example-content/%':
+      return t('This is a page that list all the content of an album. You can notice that this views takes an argument. The argument is the album ID that you want to list.');
+    case 'koken-example-single-content/%':
+      return t('This is a page that display a single image grabbed from the Koken install. This page takes, as an argument, the content ID (image ID) that you want to display.');
+  }
 }
