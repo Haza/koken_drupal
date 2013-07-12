@@ -32,10 +32,21 @@ function koken_example_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Koken Album: Album ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'koken_albums';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   /* Field: Koken Album: Album Name */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'koken_albums';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Image';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'koken-example-content/[id]';
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   /* Field: Koken Album: Album Cover */
   $handler->display->display_options['fields']['cover']['id'] = 'cover';
   $handler->display->display_options['fields']['cover']['table'] = 'koken_albums';
@@ -45,10 +56,6 @@ function koken_example_views_views_default_views() {
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'koken_albums';
   $handler->display->display_options['fields']['description']['field'] = 'description';
-  /* Field: Koken Album: Album Name */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'koken_albums';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
   /* Field: Koken Album: Album Summary */
   $handler->display->display_options['fields']['summary']['id'] = 'summary';
   $handler->display->display_options['fields']['summary']['table'] = 'koken_albums';
@@ -61,6 +68,11 @@ function koken_example_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'koken-example-album';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Koken Album listing';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
 
   $views[$view->name] = $view;
 
