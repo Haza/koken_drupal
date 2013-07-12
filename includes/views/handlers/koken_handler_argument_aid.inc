@@ -25,6 +25,6 @@ class koken_handler_argument_aid extends views_handler_argument_numeric {
    */
   function query($group_by = FALSE) {
     $this->ensure_my_table();
-    $this->query->options['koken_query_path'] = '/albums/'. $this->argument .'/content';
+    $this->query->options['koken_query_path'] = '/albums/' . $this->argument . '/content';
   }
 }

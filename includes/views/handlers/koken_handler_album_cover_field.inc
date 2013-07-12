@@ -59,8 +59,8 @@ class koken_handler_album_cover_field extends views_handler_field_custom {
       '#title' => t('Render all covers ?'),
       '#description' => t('TODO'),
       '#options' => array(
-         '0' => t('Only the first one'),
-         '1' => t('All'),
+        '0' => t('Only the first one'),
+        '1' => t('All'),
       ),
       '#default_value' => $this->options['koken_cover_all'],
       '#multiple' => FALSE,
@@ -78,9 +78,6 @@ class koken_handler_album_cover_field extends views_handler_field_custom {
    *   Renders the return reason.
    */
   public function render($values) {
-    // Get $data from line item and unserialize it.
-//    $data = unserialize($this->get_value($values, 'data'));
-
     if ($this->options['koken_cover_all']) {
       $output = FALSE;
       foreach ($values->covers as $cover) {

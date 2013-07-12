@@ -3,7 +3,8 @@
 /**
  * Custom query class to read information from the $COOKIE array.
  *
- * Our custom Query handler must be aware of some information about the current view.
+ * Our custom Query handler must be aware of some information about the current
+ * view.
  */
 abstract class koken_query_plugin extends views_plugin_query {
 

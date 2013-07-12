@@ -98,14 +98,14 @@ function koken_views_data() {
     'help' => t('Use koken REST API..'),
     'query class' => 'koken_query_plugin_content',
   );
-    // Define an id field.
+  // Define an id field.
   $data['koken_content']['id'] = array(
     'title' => t('Content id'),
     'help' => t('Get the content id.'),
     'field' => array(
       'handler' => 'koken_handler_generic_field',
     ),
-    // Information for accepting a aid as an argument
+    // Information for accepting a aid as an argument.
     'argument' => array(
       'handler' => 'koken_handler_argument_cid',
       'name field' => 'Content ID',
@@ -119,7 +119,7 @@ function koken_views_data() {
     'field' => array(
       'handler' => 'koken_handler_generic_field',
     ),
-    // Information for accepting a aid as an argument
+    // Information for accepting a aid as an argument.
     'argument' => array(
       'handler' => 'koken_handler_argument_aid',
       'name field' => 'Album ID',
