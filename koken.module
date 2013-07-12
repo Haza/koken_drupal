@@ -30,4 +30,3 @@ function koken_initialize_library($url) {
   }
   return new Koken($url);
 }
-
