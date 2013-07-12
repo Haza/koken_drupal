@@ -52,6 +52,14 @@ function koken_views_data() {
     'help' => t('Use koken REST API..'),
     'query class' => 'koken_query_plugin_albums',
   );
+  // Define the album ID field.
+  $data['koken_albums']['id'] = array(
+    'title' => t('Album ID'),
+    'help' => t('Get the album ID.'),
+    'field' => array(
+      'handler' => 'koken_handler_generic_field',
+    ),
+  );
   $data['koken_albums']['title'] = array(
     'title' => t('Album Name'),
     'help' => t('Get the album name.'),
