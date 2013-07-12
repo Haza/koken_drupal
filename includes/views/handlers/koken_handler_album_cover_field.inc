@@ -57,7 +57,7 @@ class koken_handler_album_cover_field extends views_handler_field_custom {
     $form['koken_cover_all'] = array(
       '#type' => 'checkbox',
       '#title' => t('Render all covers ?'),
-      '#description' => t('TODO'),
+      '#description' => t('Koken handle 3 differents covers for each set. Check this if you want to display all those 3 covers.'),
       '#options' => array(
         '0' => t('Only the first one'),
         '1' => t('All'),

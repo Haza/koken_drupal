@@ -40,7 +40,7 @@ class koken_query_plugin_albums extends koken_query_plugin {
   function execute(&$view) {
     $args = $view->args;
     if (empty($this->options['koken_url'])) {
-      drupal_set_message('The koken need to be set in the "query settings".', 'error');
+      drupal_set_message(t('The koken install URI needs to be set in the views\' "query settings" (under the "advanced" column).'), 'error');
     }
     else {
       $koken = koken_initialize_library($this->options['koken_url']);
@@ -59,7 +59,7 @@ class koken_query_plugin_content extends koken_query_plugin {
   function execute(&$view) {
     $args = $view->args;
     if (empty($this->options['koken_url'])) {
-      drupal_set_message('The koken need to be set in the "query settings".', 'error');
+      drupal_set_message(t('The koken install URI needs to be set in the views\' "query settings" (under the "advanced" column).'), 'error');
     }
     else {
       $koken = koken_initialize_library($this->options['koken_url']);
