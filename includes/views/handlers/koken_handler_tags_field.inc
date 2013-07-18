@@ -37,6 +37,7 @@ class koken_handler_tags_field extends views_handler_field_custom {
    *   Renders the return reason.
    */
   public function render($values) {
+    array_walk($values->tags, 'check_plain');
     return theme('item_list', array('items' => $values->tags));
   }
 }

@@ -42,6 +42,7 @@ class koken_handler_content_exif_field extends views_handler_field_custom {
       $value = isset($exif->clean) ? $exif->clean : $exif->raw;
       $output[] = $exif->label . ': ' . $value;
     }
+    array_walk($output, 'check_plain');
     return theme('item_list', array('items' => $output));
   }
 }
