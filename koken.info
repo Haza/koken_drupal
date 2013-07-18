@@ -4,9 +4,6 @@ core = 7.x
 package = Other
 dependencies[] = views
 
-; Koken php lib
-files[] = lib/Koken.php
-
 ; Views plugins
 files[] = includes/views/koken_query_plugin.inc
 

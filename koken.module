@@ -16,17 +16,14 @@ function koken_views_api() {
 }
 
 /**
- * Initialize a new Koken object.
+ * Initialize a new request object.
  *
  * @param string $url
  *   the url of a Koken install.
  *
- * @return bool|Koken
- *   A Koken object, used to query against the rest API with curl.
+ * @return object
+ *   An object, used to query against the rest API with curl.
  */
-function koken_initialize_library($url) {
-  if (empty($url)) {
-    return FALSE;
-  }
-  return new Koken($url);
+function koken_initialize_library($url, $query) {
+  return drupal_http_request($url . '/api.php' . $query, array('headers' => array('Content-type: application/json')));
 }
